@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>search</title>
+    <link rel="stylesheet" href="/inputbox.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <div id="main">
+        <nav>
+            <h1>
+               CureIt
+            </h1>
+            <a href="#">about</a>
+        </nav>
+        <div id="input-hero-section">
+            <div id="input-box-card">
+                <div id="text-heading">
+                    <h1>Know about your drugs</h1>
+                    <p> Do not take any medication without a prescription or professional guidance. Your health and safety are our top priority.</p>
+                </div>
+
+                <div id="main-form-div">
+                    <form action="/ai" method="post">
+
+
+                        <div class="name-lang-input">
+                            <label for="lang">Choose your lang</label>
+                            <div class="dropdown">
+                                <i class="ri-translate-ai-2"></i>
+                                <select id="languages" name="languages">
+                                    <option value="hindi">हिंदी</option>
+                                    <option value="english">English</option>
+                                    <option value="Hinglish">Hinglish</option>
+                                    <option value="Odia">ଓଡ଼ିଆ</option>
+                                    <option value="Kannada">ಕನ್ನಡ</option>
+                                    <option value="Telugu">తెలుగు</option>
+                                    <option value="Tamil">தமிழ்</option>
+                                    <option value="Malayalam">മലയാളം</option>
+                                    <option value="Bengali">বাংলা</option>
+                                  </select>
+                            </div>
+                        </div>
+
+
+                        <div class="name-lang-input">
+                            <label for="name">Name</label>
+                            <div class="name">
+                                <i class="ri-medicine-bottle-line"></i>
+                                <input type="text" name="medicine" placeholder="Your medicine name...">
+                            </div>
+                        </div>
+
+                      
+                        <div class="name-lang-input">
+                            <button>search</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

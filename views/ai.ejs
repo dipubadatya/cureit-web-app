@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/response.css">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+</head>
+
+<body>
+    <div id="main">
+        <nav>
+            <h1>
+                CureIt
+            </h1>
+            <a href="#">about</a>
+        </nav>
+        <div id="respons-hero-section">
+
+            <div id="main-card">
+                <% if(response){ %>
+                    <% if (error) { %>
+                        <p class="error"><%= error %></p>
+                    <% } else if (response) { %>
+                    <header>
+                        <h1>
+                            <%= response.medicineName %>
+                        </h1>
+                    </header>
+
+                    <main>
+
+                        <div class="information-div">
+                            <h2 style="color: rgb(248, 26, 26);">Warning </h2>
+                            <p>
+                                <i class="ri-error-warning-fill"></i> <%= response.warning %>
+                            </p>
+                        </div>
+
+
+                        <div class="information-div">
+                            <h2>Uses/Benefits: </h2>
+                            <p>
+                                <%= response.uses %>
+                            </p>
+
+                        </div>
+
+                        <div class="information-div">
+                            <h2>Recommended Time to Take:</h2>
+                            <p>
+                                <%= response.recommendedTime %>
+                            </p>
+
+
+                        </div>
+
+                        <div class="information-div">
+                            <h2>Common Side Effects:</h2>
+                            <p>
+                                <%= response.sideEffects %>
+                            </p>
+
+                        </div>
+
+                        <div class="information-div">
+                            <h2>Additional Information:</h2>
+                            <p>
+                                <%= response.additionalInfo %>
+                            </p>
+
+                        </div>
+
+
+                        <div class="information-div">
+                            <h2>Rember:</h2>
+                            <p>
+                                <%= response.medWarning %>
+                            </p>
+                        </div>
+
+
+                        <div class="information-div">
+                            <h2>Price Range:</h2>
+                            <p>
+                                <%= response.priceRange %>
+                            </p>
+                        </div>
+
+                        <div class="information-div">
+                            <h2>Similar Medicines</h2>
+                            <p>
+                                <%= response.similarMedicines %>
+                            </p>
+                        </div>
+
+                        <div class="information-div" style="background-color:rgb(214, 252, 239);">
+                            <h2>summary:</h2>
+                            <p>
+                                <%= response.summary %>
+                            </p>
+                        </div>
+
+
+    <% } else { %>
+              <p>No medicine information found.</p>
+          <% } %>
+                    </main>
+                    <% } %>
+            </div>
+        </div>
+
+</body>
+
+</html>
