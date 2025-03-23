@@ -57,9 +57,9 @@ app.post('/ai', async (req, res) => {
     8. Provide a brief summary of the medicine 
     9. provide a list of similar medicines
     10.provide price range of this madicine
-    11. provide a warnig "Do not take any medication without a prescription or professional guidance. Your health and safety are our top priority" in both lnaguage in "${languages}"
+    11. provide a warnig "Do not take any medication without a prescription or professional guidance. Your health and safety are our top priority" . in "${languages}"
 
-    
+    Provide only valid JSON data without any extra text.
     The response should be in the following JSON format:
     {
         "medicineName": "Medicine Name",
