@@ -1,65 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="stylesheet" href="/about.css">
-        <link
-        href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
-        rel="stylesheet"
-    />
-    </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - CureIt & The Developer</title>
     
-    <body>
-        <div id="main">
-            <nav>
-                <h1>
-                    CureIt
-                </h1>
-                <a href="https://www.instagram.com/_pstarz/">Instagram</a>
-            </nav>
-            <div id="respons-hero-section">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-
-                <div id="main-card">
-                       <header>
-                            <h1>
-                               About us
-                            </h1>
-                        </header>
+    <script src="https://cdn.tailwindcss.com"></script>
     
-                        <main>
+    <script>
+        tailwind.config = {
+        theme: {
+            extend: {
+            fontFamily: {
+                sans: ['Outfit', 'sans-serif'],
+            },
+            colors: {
+                'carbon-black': '#1f2421',
+                'stormy-teal': '#216869',
+                'seaweed': '#49a078',
+                'muted-teal': '#9cc5a1',
+                'alabaster-grey': '#dce1de',
+            }
+            }
+        }
+        }
+    </script>
+</head>
+<body class="bg-alabaster-grey text-carbon-black antialiased">
 
-                <div class="information-div" >
+    <nav class="fixed w-full z-50 top-0 left-0 bg-alabaster-grey/90 backdrop-blur-md border-b border-muted-teal/20">
+        <div class="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-2xl font-extrabold tracking-tighter text-stormy-teal flex items-center gap-2">
+                <i class="ri-arrow-left-circle-fill text-seaweed text-3xl"></i> Back
+            </a>
+            </div>
+    </nav>
 
-                   <p>
-                    Welcome to CureIt, an AI-powered platform designed to provide clear and reliable information about medicines. Built using Gemini AI, CureIt helps users—especially elderly individuals—understand their medications better, addressing common concerns such as why a medicine is prescribed, how to take it correctly, potential side effects, and its overall summary.
-                   </p>
-                      
+    <main class="pt-28 pb-20 px-6">
+        <div class="max-w-4xl mx-auto space-y-8">
 
-                   <p><strong style="color: red;">⚠️ Important Disclaimer
-                </strong>
-                    CureIt is an AI-based project created for informational purposes only. It is not a substitute for professional medical advice. Always consult your doctor before taking any medication. Taking medicine without a proper prescription may be harmful to your health.   
-                    </p>            
-                   <strong>
-                    Connect with me:
-                   </strong>
-                   <span >
-                    <i class="ri-links-line"></i> <a href="https://www.linkedin.com/in/papu-badatya-759767254/">LinkedIn</a>
+            <div class="text-center mb-12">
+                <h1 class="text-5xl md:text-6xl font-extrabold text-carbon-black mb-4">Behind the Code</h1>
+                <p class="text-gray-500 text-lg">The story of CureIt and the developer behind it.</p>
+            </div>
 
-                   </span>
+            <div class="bg-white rounded-3xl p-8 md:p-10 shadow-lg border border-white relative overflow-hidden group">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-muted-teal/20 rounded-bl-full -mr-8 -mt-8 transition-all group-hover:bg-seaweed/20"></div>
+
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="p-3 bg-stormy-teal rounded-xl text-white">
+                        <i class="ri-robot-2-fill text-2xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-carbon-black">About the Project</h2>
                 </div>
 
-                        </main>
-                       
+                <p class="text-gray-600 leading-relaxed text-lg mb-6">
+                    <strong>CureIt</strong> is an AI-powered pharmaceutical guide designed to bridge the gap between complex medical jargon and common understanding. 
+                    Built using the <strong>Gemini API</strong>, it helps users—especially the elderly and parents—understand medication uses, dosage, and side effects in their local language.
+                </p>
+
+                <div>
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-gray-400 mb-3">Built With</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-gray-100 rounded-lg text-sm font-semibold text-gray-700 border border-gray-200">Node.js</span>
+                        <span class="px-3 py-1 bg-gray-100 rounded-lg text-sm font-semibold text-gray-700 border border-gray-200">Express</span>
+                        <span class="px-3 py-1 bg-gray-100 rounded-lg text-sm font-semibold text-gray-700 border border-gray-200">EJS</span>
+                        <span class="px-3 py-1 bg-blue-50 rounded-lg text-sm font-semibold text-blue-600 border border-blue-100">Tailwind CSS</span>
+                        <span class="px-3 py-1 bg-purple-50 rounded-lg text-sm font-semibold text-purple-600 border border-purple-100">Gemini AI</span>
+                    </div>
                 </div>
             </div>
-    
- 
 
-    
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div class="md:col-span-2 bg-carbon-black text-white rounded-3xl p-8 md:p-10 shadow-xl relative overflow-hidden">
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-3 mb-2 text-seaweed">
+                            <i class="ri-code-s-slash-line text-2xl"></i>
+                            <span class="font-bold tracking-widest uppercase text-sm">The Developer</span>
+                        </div>
+                        <h2 class="text-3xl font-bold mb-4">Frontend Developer & <br>UI Enthusiast.</h2>
+                        <p class="text-gray-400 mb-8 leading-relaxed">
+                            Hi, I built this as a side project to showcase my skills in building responsive, modern web applications. 
+                            I love turning complex logic into beautiful, user-friendly interfaces.
+                        </p>
+                        
+                        <a href="https://www.linkedin.com/in/papu-badatya-759767254/" target="_blank" class="inline-flex items-center gap-2 bg-white text-carbon-black px-6 py-3 rounded-xl font-bold hover:bg-seaweed hover:text-white transition-all">
+                            <i class="ri-linkedin-fill text-xl"></i> Connect on LinkedIn
+                        </a>
+                    </div>
+                    <i class="ri-terminal-box-line absolute -bottom-10 -right-10 text-[12rem] text-white opacity-5 rotate-12"></i>
+                </div>
+
+                <div class="bg-stormy-teal text-white rounded-3xl p-8 flex flex-col justify-center items-center text-center shadow-lg hover:scale-[1.02] transition-transform relative overflow-hidden">
+                    
+                    <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center text-3xl mb-4 backdrop-blur-sm relative z-10">
+                        <i class="ri-briefcase-4-line"></i>
+                    </div>
+                    
+                    <h3 class="font-bold text-xl mb-2 relative z-10">My Portfolio</h3>
+                    <p class="text-muted-teal text-sm mb-6 relative z-10">See my other projects</p>
+                    
+                    <a href="https://my-new-portfolio-3sq7.vercel.app/" class="w-full py-3 bg-seaweed text-white rounded-xl font-bold hover:bg-white hover:text-carbon-black transition-all relative z-10">
+                        View Work
+                    </a>
+
+                    <div class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+                </div>
+            </div>
+
+            <div class="bg-red-50 border-l-8 border-red-500 rounded-r-2xl p-6 md:p-8 flex gap-6 items-start shadow-sm">
+                <div class="text-red-500 text-4xl shrink-0">
+                    <i class="ri-alarm-warning-fill"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-red-700 mb-2">Important Medical Disclaimer</h3>
+                    <p class="text-red-900/80 leading-relaxed">
+                        This website is a portfolio project created for educational purposes. 
+                        <strong>Do not take any medication without a proper prescription from a certified doctor.</strong> 
+                        AI can make mistakes, and self-medication can be dangerous to your health.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="text-center text-gray-500 py-8 text-sm">
+        <p>© 2024 CureIt Portfolio Project. Designed with <i class="ri-heart-fill text-red-400"></i> & Code.</p>
+    </footer>
+
 </body>
 </html>
