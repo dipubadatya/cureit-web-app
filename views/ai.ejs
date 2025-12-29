@@ -1,289 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- <link rel="stylesheet" href="/response.css"> -->
-    <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
-    rel="stylesheet"
-/>
-<style>
-    :root {
-        --primary: #3b82f6;
-        --primary-dark: #2563eb;
-        --warning: #ef4444;
-        --success: #10b981;
-        --gray-100: #f3f4f6;
-        --gray-200: #e5e7eb;
-        --gray-300: #d1d5db;
-        --gray-800: #1f2937;
-        --gray-900: #111827;
-    }
-
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    }
-
-    body {
-        background-color: #f9fafb;
-        color: var(--gray-800);
-        line-height: 1.6;
-    }
-
-    nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1.25rem 2rem;
-        background-color: white;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        position: sticky;
-        top: 0;
-        z-index: 10;
-    }
-
-    nav h1 {
-        color: var(--primary);
-        font-size: 1.75rem;
-        font-weight: 700;
-    }
-
-    nav a {
-        text-decoration: none;
-        color: var(--gray-800);
-        font-weight: 500;
-        transition: color 0.2s;
-        padding: 0.5rem 1rem;
-        border-radius: 6px;
-    }
-
-    nav a:hover {
-        color: var(--primary);
-        background-color: var(--gray-100);
-    }
-
-    #respons-hero-section {
-        max-width: 800px;
-        margin: 2rem auto;
-        padding: 0 1.5rem;
-    }
-
-    #main-card {
-        background-color: white;
-        border-radius: 12px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        overflow: hidden;
-    }
-
-    header {
-        background-color: var(--primary);
-        color: white;
-        padding: 2rem;
-        text-align: center;
-    }
-
-    header h1 {
-        font-size: 2rem;
-        font-weight: 700;
-    }
-
-    main {
-        padding: 2rem;
-    }
-
-    .information-div {
-        margin-bottom: 1.5rem;
-        padding: 1.25rem;
-        border-radius: 8px;
-        background-color: var(--gray-100);
-    }
-
-    .information-div:last-child {
-        margin-bottom: 0;
-    }
-
-    .information-div h2 {
-        font-size: 1.25rem;
-        margin-bottom: 0.75rem;
-        color: var(--gray-900);
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-
-    .information-div p {
-        color: var(--gray-800);
-        font-size: 1rem;
-    }
-
-    .information-div:first-of-type {
-        background-color: #fef2f2;
-        border-left: 4px solid var(--warning);
-    }
-
-    .information-div:first-of-type h2 {
-        color: var(--warning);
-        display: flex;
-        align-items: center;
-    }
-
-    .information-div:first-of-type p {
-        display: flex;
-        align-items: flex-start;
-        gap: 0.5rem;
-    }
-
-    .information-div:first-of-type i {
-        color: var(--warning);
-        font-size: 1.25rem;
-    }
-
-    .information-div:nth-child(9) {
-        background-color: rgb(214, 252, 239);
-        border-left: 4px solid var(--success);
-    }
-
-    .error {
-        color: var(--warning);
-        text-align: center;
-        padding: 2rem;
-    }
-
-    @media (max-width: 640px) {
-        nav {
-            padding: 1rem;
-        }
-        
-        header {
-            padding: 1.5rem;
-        }
-        
-        header h1 {
-            font-size: 1.5rem;
-        }
-        
-        main {
-            padding: 1.25rem;
-        }
-        
-        .information-div {
-            padding: 1rem;
-        }
-    }
-</style>
+    <title><%= response.medicineName %> - Details</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
-
 <body>
-    <div id="main">
-        <nav>
-            <h1>
-                CureIt
-            </h1>
-            <a href="/">Home</a>
-        </nav>
-       
 
-        <div id="respons-hero-section">
+    <nav>
+        <h1>CureIt.</h1>
+        <a href="/ai"><i class="ri-search-line"></i> New Search</a>
+    </nav>
 
-            <div id="main-card">
-                <% if(response){ %>
-                    <% if (error) { %>
-                        <p class="error"><%= error %></p>
-                    <% } else if (response) { %>
-                    <header>
-                        <h1>
-                            <%= response.medicineName %>
-                        </h1>
-                    </header>
-
-                    <main>
-
-                        <div class="information-div">
-                            <h2 style="color: rgb(248, 26, 26);">Warning </h2>
-                            <p>
-                                <i class="ri-error-warning-fill"></i> <%= response.warning %>
-                            </p>
-                        </div>
-
-
-                        <div class="information-div">
-                            <h2>Uses/Benefits: </h2>
-                            <p>
-                                <%= response.uses %>
-                            </p>
-
-                        </div>
-
-                        <div class="information-div">
-                            <h2>Recommended Time to Take:</h2>
-                            <p>
-                                <%= response.recommendedTime %>
-                            </p>
-
-
-                        </div>
-
-                        <div class="information-div">
-                            <h2>Common Side Effects:</h2>
-                            <p>
-                                <%= response.sideEffects %>
-                            </p>
-
-                        </div>
-
-                        <div class="information-div">
-                            <h2>Additional Information:</h2>
-                            <p>
-                                <%= response.additionalInfo %>
-                            </p>
-
-                        </div>
-
-
-                        <div class="information-div">
-                            <h2>Rember:</h2>
-                            <p>
-                                <%= response.medWarning %>
-                            </p>
-                        </div>
-
-
-                        <div class="information-div">
-                            <h2>Price Range:</h2>
-                            <p>
-                                <%= response.priceRange %>
-                            </p>
-                        </div>
-
-                        <div class="information-div">
-                            <h2>Similar Medicines</h2>
-                            <p>
-                                <%= response.similarMedicines %>
-                            </p>
-                        </div>
-
-                        <div class="information-div" style="background-color:rgb(214, 252, 239);">
-                            <h2>summary:</h2>
-                            <p>
-                                <%= response.summary %>
-                            </p>
-                        </div>
-                     
-
-    <% } else { %>
-              <p>No medicine information found.</p>
-          <% } %>
-                    </main>
-                    <% } %>
+    <div id="respons-hero-section">
+        
+        <% if(response) { %>
+            
+            <div class="result-header">
+                <h1><%= response.medicineName %></h1>
+                <span class="summary-tag"><%= response.summary %></span>
             </div>
-        </div>
+
+            <div class="info-grid">
+
+                <div class="card warning" style="border-left: 5px solid #d32f2f; background-color: #ffebee;">
+                    <h2 style="color: #d32f2f;"><i class="ri-alarm-warning-fill"></i> Prescription Safety</h2>
+                    <p style="color: #b71c1c; font-weight: 600;">
+                        <%= response.criticalWarning %>
+                    </p>
+                </div>
+
+                <div class="card uses">
+                    <h2><i class="ri-first-aid-kit-fill"></i> Uses & Benefits</h2>
+                    <p><%= response.uses %></p>
+                </div>
+
+                <div class="card" style="border-left-color: var(--carbon-black);">
+                    <h2><i class="ri-microscope-line"></i> How it works in the body</h2>
+                    <p><%= response.mechanismOfAction %></p>
+                </div>
+
+                <div class="card">
+                    <h2><i class="ri-time-fill"></i> When to take</h2>
+                    <p><%= response.recommendedTime %></p>
+                </div>
+
+                <div class="card">
+                    <h2><i class="ri-virus-line"></i> Side Effects</h2>
+                    <p><%= response.sideEffects %></p>
+                </div>
+
+                <div class="card">
+                    <h2><i class="ri-error-warning-fill"></i> Specific Precautions</h2>
+                    <p><%= response.medWarning %></p>
+                </div>
+
+                <div class="card">
+                    <h2><i class="ri-links-line"></i> Alternatives</h2>
+                    <p><%= response.similarMedicines %></p>
+                </div>
+
+                <div class="card price">
+                    <h2><i class="ri-money-dollar-circle-line"></i> Est. Price</h2>
+                    <p><%= response.priceRange %></p>
+                </div>
+
+            </div>
+
+            <div class="disclaimer-box">
+                <p><i class="ri-shield-check-line"></i> <strong>Medical Disclaimer:</strong> This information is AI-generated for educational purposes only. Always consult a real doctor before taking medication.</p>
+            </div>
+
+        <% } else { %>
+            <div class="result-header">
+                <h1>No Data Found</h1>
+                <a href="/ai" style="color: var(--seaweed);">Go Back</a>
+            </div>
+        <% } %>
+
+    </div>
 
 </body>
-
 </html>
