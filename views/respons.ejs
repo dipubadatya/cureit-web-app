@@ -1,71 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>search</title>
-    <link rel="stylesheet" href="/inputbox.css">
+    <title>CureIt - Universal Medicine Guide</title>
+    <link rel="stylesheet" href="/style.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
-
 </head>
-
 <body>
-    <div id="main">
-        <nav>
-            <h1>
-               CureIt
-            </h1>
-            <a href="/about">About</a>
-        </nav>
-        <div id="input-hero-section">
-            <div id="input-box-card">
-                <div id="text-heading">
-                    <h1>Know about your drugs</h1>
-                    <p> Do not take any medication without a prescription or professional guidance. Your health and safety are our top priority.</p>
-                </div>
+    
+    <nav>
+        <h1>CureIt.</h1>
+        <a href="/about">About Us</a>
+    </nav>
 
-                <div id="main-form-div">
-                    <form action="/ai" method="post">
-
-
-                        <div class="name-lang-input">
-                            <label for="lang">Choose your language</label>
-                            <div class="dropdown">
-                                <i class="ri-translate-ai-2"></i>
-                                <select id="languages" name="languages">
-                                    <option value="hindi">हिंदी</option>
-                                    <option value="english">English</option>
-                                    <option value="Hinglish">Hinglish</option>
-                                    <option value="Odia">ଓଡ଼ିଆ</option>
-                                    <option value="Kannada">ಕನ್ನಡ</option>
-                                    <option value="Telugu">తెలుగు</option>
-                                    <option value="Tamil">தமிழ்</option>
-                                    <option value="Malayalam">മലയാളം</option>
-                                    <option value="Bengali">বাংলা</option>
-                                  </select>
-                            </div>
-                        </div>
-
-
-                        <div class="name-lang-input">
-                            <label for="name">Medicine Name</label>
-                            <div class="name">
-                                <i class="ri-medicine-bottle-line"></i>
-                                <input type="text" name="medicine" placeholder="Your medicine name...">
-                            </div>
-                        </div>
-
-                      
-                        <div class="name-lang-input">
-                            <button>search</button>
-                        </div>
-
-                    </form>
-                </div>
+    <div id="input-hero-section">
+        <div id="input-box-card">
+            
+            <div id="text-heading">
+                <i class="ri-global-line" style="font-size: 3rem; color: var(--seaweed); margin-bottom: 10px;"></i>
+                <h1>Global Medicine Guide</h1>
+                <p>Medical knowledge in your mother tongue. Safe, inclusive, and easy to understand.</p>
+                
+                <% if (typeof error !== 'undefined' && error) { %>
+                    <div style="background: #ffebee; color: #c62828; padding: 10px; border-radius: 8px; margin-bottom: 20px;">
+                        <%= error %>
+                    </div>
+                <% } %>
             </div>
+
+            <form action="/ai" method="post">
+                <div class="name-lang-input">
+                    <label for="languages">Select Language / भाषा चुनें</label>
+                    <div class="input-wrapper">
+                        <i class="ri-translate-2"></i>
+                        <select id="languages" name="languages">
+                            <option value="English" selected>English (Default)</option>
+                            <option value="Hinglish">Hinglish (Conversational)</option>
+
+                            <optgroup label="Indian Languages (Regional)">
+                                <option value="Odia">Odia (ଓଡ଼ିଆ)</option>
+                                <option value="Hindi">Hindi (हिंदी)</option>
+                                <option value="Bengali">Bengali (বাংলা)</option>
+                                <option value="Kannada">Kannada (ಕನ್ನಡ)</option>
+                                <option value="Malayalam">Malayalam (മലയാളം)</option>
+                                <option value="Tamil">Tamil (தமிழ்)</option>
+                                <option value="Telugu">Telugu (తెలుగు)</option>
+                                <option value="Marathi">Marathi (मराठी)</option>
+                                <option value="Gujarati">Gujarati (ગુજરાતી)</option>
+                                <option value="Punjabi">Punjabi (ਪੰਜਾਬੀ)</option>
+                                <option value="Assamese">Assamese (অসমীয়া)</option>
+                                <option value="Urdu">Urdu (اردو)</option>
+                            </optgroup>
+
+                            <optgroup label="International / Global">
+                                <option value="Russian">Russian (Русский)</option>
+                                <option value="Spanish">Spanish (Español)</option>
+                                <option value="French">French (Français)</option>
+                                <option value="German">German (Deutsch)</option>
+                                <option value="Portuguese">Portuguese (Português)</option>
+                                <option value="Italian">Italian (Italiano)</option>
+                                <option value="Latin">Latin (Lingua Latina)</option>
+                                <option value="Chinese">Chinese (Simplified)</option>
+                                <option value="Japanese">Japanese (日本語)</option>
+                                <option value="Korean">Korean (한국어)</option>
+                                <option value="Arabic">Arabic (العربية)</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="name-lang-input">
+                    <label for="medicine">Medicine Name</label>
+                    <div class="input-wrapper">
+                        <i class="ri-capsule-line"></i>
+                        <input type="text" name="medicine" id="medicine" placeholder="E.g., Dolo 650, Citrazine..." required>
+                    </div>
+                </div>
+
+                <button type="submit">
+                    <i class="ri-search-2-line"></i> Translate & Explain
+                </button>
+            </form>
+
         </div>
     </div>
-</body>
 
+</body>
 </html>
